@@ -32,9 +32,9 @@ class LoginCest
      */
     public function loginUser(FunctionalTester $I)
     {
-        $I->amOnPage('/site/login');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->amOnPage('/login');
+        $I->fillField('//*[@id="loginform-username"]', 'erau');
+        $I->fillField('//*[@id="loginform-password"]', 'password_0');
         $I->click('login-button');
 
         $I->see('Logout (erau)', 'form button[type=submit]');
